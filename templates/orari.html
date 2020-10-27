@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Passaggio a livello</title>
+    <style>
+      body {font-family: sans-serif;}
+    </style>
+  </head>
+  <body>
+    {% for item in items %}
+    <div class="orario">Chiuso tra le {{ item[0].time().isoformat()[:5] }} e le {{ item[1].time().isoformat()[:5] }}</div>
+    {% endfor %}
+  </body>
+</html>
