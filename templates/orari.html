@@ -3,14 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%221em%22 font-size=%2285%22>❤️</text></svg>">
     <title>Passaggio a livello</title>
     <style>
       body {font-family: sans-serif;}
+      div.center {width: 100%; text-align: center;}
+      div {padding: 0.1em;}
+      div.status {margin-bottom: 1em}
+      span.chiuso, span.aperto {font-weight: bold;}
+      span.chiuso {color: #cb3234;}
+      span.aperto {color: #00bb2d;}
     </style>
   </head>
   <body>
+    <div class="status">{{ status }}</div>
     {% for item in items %}
-    <div class="orario">Chiuso tra le {{ item[0].time().isoformat()[:5] }} e le {{ item[1].time().isoformat()[:5] }}</div>
+    <div class="orario">Chiuso tra le <span class="chiuso">{{ item[0].time().isoformat()[:5] }}</span> e le <span class="aperto">{{ item[1].time().isoformat()[:5] }}</span></div>
     {% endfor %}
   </body>
 </html>
